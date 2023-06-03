@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>relution</Name>
+  <Repository>relution/relution:latest</Repository>
+  <Registry>https://hub.docker.com/r/relution/relution/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/relution-io</Project>
+  <Overview>Relution is the Enterprise Mobility Management platform for innovative companies and educational institutions. It enables you to manage your mobile apps and devices easily and securely.</Overview>
+  <Category>Cloud: Security: Network:Management Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1685831553</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>- MariaDB&#xD;
+    set max_allowed_packet to 1G&#xD;
+- (optional) reverse proxy&#xD;
+    see https://github.com/relution-io/relution-setup/blob/master/docker/Linux/opt/relution/relution-nginx.conf&#xD;
+Please refer to https://hub.docker.com/r/relution/relution for additional setup steps and variables</Requires>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="jdbc:mariadb://mariadb/relution?useServerPrepStmts=true" Mode="" Description="JDBC String for the database connection" Type="Variable" Display="always" Required="true" Mask="false">jdbc:mariadb://mariadb/relution?useServerPrepStmts=true</Config>
+  <Config Name="DATABASE_USER" Target="DATABASE_USER" Default="relution" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">relution</Config>
+  <Config Name="DATABASE_PWD" Target="DATABASE_PWD" Default="relution" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true">relution</Config>
+  <Config Name="HOSTNAME" Target="HOSTNAME" Default="my.domain.com" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">my.domain.com</Config>
+  <Config Name="ORGA_ADMIN_USERNAME" Target="ORGA_ADMIN_USERNAME" Default="demo" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="ORGA_ADMIN_PASSWORD" Target="ORGA_ADMIN_PASSWORD" Default="demo12345" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="ORGA_ADMIN_EMAIL" Target="ORGA_ADMIN_EMAIL" Default="admin@my.domain.com" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">admin@my.domain.com</Config>
+  <Config Name="ORGA_ADMIN_GIVENNAME" Target="ORGA_ADMIN_GIVENNAME" Default="Max" Mode="" Description="First name of admin" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="ORGA_ADMIN_SURNAME" Target="ORGA_ADMIN_SURNAME" Default="Mustermann" Mode="" Description="Last name of admin" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="SMTP_HOST" Target="SMTP_HOST" Default="smtp@my.domain.com" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">smtp@my.domain.com</Config>
+  <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Unnecessary when reverse-proxying within a custom docker network" Type="Port" Display="always" Required="false" Mask="false"></Config> 
+  <Config Name="ORGA_NAME" Target="ORGA_NAME" Default="Demo" Mode="" Description="Short name of organisation" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="ORGA_FULLNAME" Target="ORGA_FULLNAME" Default="Demo org Inc." Mode="" Description="Full name of organisation" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="DATABASE_TYPE" Target="DATABASE_TYPE" Default="mysql" Mode="" Description="mysql/mssql/oracle" Type="Variable" Display="advanced" Required="false" Mask="false">mysql</Config>
+</Container>
