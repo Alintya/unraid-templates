@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gitlab-runner</Name>
+  <Repository>gitlab/gitlab-runner:latest</Repository>
+  <Registry>https://hub.docker.com/r/gitlab/gitlab-runner/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/gitlab/gitlab-runner/</Support>
+  <Project/>
+  <Overview>GitLab CI Multi Runner used to fetch and run pipeline jobs with GitLab CI&#xD;
+&#xD;
+https://hub.docker.com/r/gitlab/gitlab-runner/&#xD;
+&#xD;
+Configure via config.toml in /etc/gitlab-runner</Overview>
+  <Category>Productivity: Tools: Status:Beta</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1690199380</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Container Path 1" Target="/etc/gitlab-runner" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gitlab-runner/config/</Config>
+  <Config Name="/var/run/docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+</Container>
