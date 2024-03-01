@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>rudolfs-local</Name>
+  <Repository>jasonwhite0/rudolfs</Repository>
+  <Registry>https://hub.docker.com/r/jasonwhite0/rudolfs/</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/jasonwhite/rudolfs</Project>
+  <Overview>A high-performance, caching Git LFS server.&#xD;
+  Adapted template to use a local storage only.
+&#xD;
+Recommended to use a reverse proxy.</Overview>
+  <Category>Cloud: Productivity: Tools: Network:Privacy Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Alintya/unraid-templates/main/assets/rudolfs.png</Icon>
+  <ExtraParams>--entrypoint "/tini"</ExtraParams>
+  <PostArgs>-- /rudolfs --cache-dir /data --key ${RUDOLFS_KEY} --log-level debug local --path /data</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/rudolfs/localdata" Mode="rw" Description="object storage location" Type="Path" Display="always" Required="true" Mask="false">"/mnt/user/appdata/rudolfs/localdata"</Config>
+  <Config Name="Port" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="LFS_ENCRYPTION_KEY" Target="RUDOLFS_KEY" Default="" Mode="" Description="generate with openssl rand -hex 32" Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
