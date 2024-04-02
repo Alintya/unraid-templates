@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AFFiNE-selfhosted</Name>
+  <Repository>ghcr.io/toeverything/affine-graphql:stable</Repository>
+  <Registry>https://github.com/toeverything/AFFiNE/pkgs/container/affine-graphql</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/toeverything/AFFiNE</Project>
+  <Overview>There can be more than Notion and Miro. AFFiNE(pronounced ) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.</Overview>
+  <Category>Cloud: Productivity: Tools: Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:3010]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Alintya/unraid-templates/main/assets/affine.png</Icon>
+  <ExtraParams>--env NODE_ENV="production" --env NODE_OPTIONS="--import=./scripts/register.js"</ExtraParams>
+  <PostArgs>-- 'node ./scripts/self-host-predeploy &amp;amp;&amp;amp; node ./dist/index.js'</PostArgs>
+  <CPUset/>
+  <DateInstalled>1712068136</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>- redis&#xD;
+- postgres</Requires>
+  <Config Name="Web UI" Target="3010" Default="3010" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false" />
+  <Config Name="Config path" Target="/root/.affine/config" Default="/mnt/user/appdata/affine/config" Mode="rw" Description="custom configurations" Type="Path" Display="always" Required="true" Mask="false" />
+  <Config Name="Blob storage path" Target="/root/.affine/storage" Default="/mnt/user/appdata/affine/storage" Mode="rw" Description="blob storage" Type="Path" Display="always" Required="true" Mask="false" />
+  <Config Name="REDIS_SERVER_HOST" Target="REDIS_SERVER_HOST" Default="redis" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgres://affine:affine@postgres:5432/affine" Mode="" Description="complete path to affine database: postgresql://[user[:password]@][host][:port][/dbname]" Type="Variable" Display="always" Required="true" Mask="false" />
+  <Config Name="AFFINE_ADMIN_EMAIL" Target="AFFINE_ADMIN_EMAIL" Default="" Mode="" Description="initial user email" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="AFFINE_ADMIN_PASSWORD" Target="AFFINE_ADMIN_PASSWORD" Default="" Mode="" Description="initial user password" Type="Variable" Display="always" Required="false" Mask="true" />
+</Container>
