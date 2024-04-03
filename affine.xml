@@ -15,8 +15,6 @@
   <Icon>https://raw.githubusercontent.com/Alintya/unraid-templates/main/assets/affine.png</Icon>
   <ExtraParams>--env NODE_ENV="production" --env NODE_OPTIONS="--import=./scripts/register.js"</ExtraParams>
   <PostArgs>-- 'node ./scripts/self-host-predeploy &amp;amp;&amp;amp; node ./dist/index.js'</PostArgs>
-  <CPUset/>
-  <DateInstalled>1712068136</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>- redis&#xD;
