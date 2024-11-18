@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>sqlchat</Name>
+  <Repository>sqlchat/sqlchat</Repository>
+  <Registry>https://hub.docker.com/r/sqlchat/sqlchat</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://github.com/sqlchat/sqlchat</Project>
+  <Overview>SQL Chat is a chat-based SQL client, which uses natural language to communicate with the database to implement operations such as query, modification, addition, and deletion of the database.</Overview>
+  <Category>Cloud: Productivity: Tools: Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Alintya/unraid-templates/main/assets/sqlchat.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText></DonateText>
+  <DonateLink></DonateLink>
+  <Requires/>
+  <Config Name="Port" Target="3000" Default="3000" Mode="tcp" Description="Web UI" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="NEXTAUTH_SECRET" Target="NEXTAUTH_SECRET" Default="" Mode="" Description="Set to random string i.e. openssl rand -hex 5" Type="Variable" Display="always" Required="true" Mask="false">190eeac064</Config>
+  <Config Name="OPENAI_API_KEY" Target="OPENAI_API_KEY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="DATABASE_URL" Target="DATABASE_URL" Default="postgresql://postgres:postgres@localhost:5432/sqlchat?schema=sqlchat&amp;amp;application_name=sqlchat" Mode="" Description="Only if USE_DATABASE true" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="NEXT_PUBLIC_USE_DATABASE" Target="NEXT_PUBLIC_USE_DATABASE" Default="false" Mode="" Description="false for personal use" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+</Container>
